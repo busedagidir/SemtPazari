@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Semt Pazarı</title>
+        <link rel="stylesheet" href="./resources/style.css" type="text/css"/>
+        <script type="text/javascript" src="./resources/script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('mySidenav')">&times;</a>
+                <a onclick="openNav('moda')">Moda</a>
+                <a onclick="openNav('elektronik')">Elektronik</a>
+                <a onclick="openNav('evMutfak')">Ev ve Mutfak</a>
+                <a onclick="openNav('konsol')">Video Oyun ve Konsol</a>
+                <a onclick="openNav('bebek')">Bebek ve Oyuncak</a>
+                <a onclick="openNav('spor')">Spor ve Outdoor</a>
+            </div>
+            <div id="moda" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('moda')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Çanta" action="#{kategori.kategoriSayfa('canta')}"/>
+                    <h:commandLink value="Ayakkabı" action="#{kategori.kategoriSayfa('ayakkabi')}"/>
+                    <h:commandLink value="Kıyafet" action="#{kategori.kategoriSayfa('kiyafet')}"/>
+                </h:form>>
+            </div>
+            <div id="elektronik" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('elektronik')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Bilgisayar" action="#{kategori.kategoriSayfa('bilgisayar')}"/>
+                    <h:commandLink value="Telefon" action="#{kategori.kategoriSayfa('telefon')}"/>
+                    <h:commandLink value="Ev Eşyaları" action="#{kategori.kategoriSayfa('evEsyasi')}"/>
+                    <h:commandLink value="Kamera" action="#{kategori.kategoriSayfa('kamera')}"/>
+                    <h:commandLink value="Kulaklık" action="#{kategori.kategoriSayfa('kulaklik')}"/>
+                </h:form>>
+            </div>
+            <div id="evMutfak" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('evMutfak')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Ev Dekorasyonu" action="#{kategori.kategoriSayfa('evDekorasyon')}"/>
+                    <h:commandLink value="Aydınlatma" action="#{kategori.kategoriSayfa('aydinlatma')}"/>
+                    <h:commandLink value="Mutfak Gereçleri" action="#{kategori.kategoriSayfa('mutfakGerecleri')}"/>
+                </h:form>>
+            </div>
+            <div id="konsol" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('konsol')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Playstation 4" action="#{kategori.kategoriSayfa('ps4')}"/>
+                    <h:commandLink value="Xbox One" action="#{kategori.kategoriSayfa('xbox')}"/>
+                    <h:commandLink value="Nintendo Switch" action="#{kategori.kategoriSayfa('nintendo')}"/>
+                </h:form>>
+            </div>
+            <div id="spor" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('spor')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Fitness ve Egzersiz" action="#{kategori.kategoriSayfa('fitness')}"/>
+                    <h:commandLink value="Kamp ve Doğa Yürüyüşü" action="#{kategori.kategoriSayfa('kamp')}"/>
+                </h:form>
+            </div>
+            
+        <header class="header">
+            
+            <span class="kategori" style="font-size:30px;cursor:pointer" onclick="openNav('mySidenav')">&#9776;</span>
+            
+            <h:link class="link-title" value="Semt Pazarı" outcome="index.xhtml" />
+            <h:form class="searchbox">
+                <h:inputText value="#{arama.hedef}"  p:placeholder="Ara..." size="70"/>
+                
+                <h:commandButton class="searchImg" styleClass="searchbutton" value="ARA" action="#{arama.search()}"/>
+            </h:form>
+            
+            <h:form class="sepet">
+                <h:commandButton class="sepetButon" value="Sepetim : #{user.getSepetim()}" action="#{sepet.sepetGit(user.email)}"/>
+            </h:form>
+            
+            <div class="Uye-Giris">
+            <h:link class ="Uye" value="Üye Ol" outcome="signUp.xhtml" />
+            <h:link class ="Uye" value="Giriş Yap" outcome="login.xhtml" />
+            <h:link class ="Uye" value="İletişim" outcome="iletisim.xhtml" />
+            <h:link class ="Uye" value="SSS" outcome="sorular.xhtml"/>
+            </div>
+        </header>
+            
+        <nav class="menu">
+        </nav>
+        
+        <div class="main">
+            <h2>Hoşgeldin #{user.getName()}</h2>
+            <h2>Günün Fırsatları</h2>
+            <div class="imageContainer">
+                <div class="imageSlide">
+                    <div class="imageSelf">
+                    <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/canta1.jpg')}">
+                                <h:graphicImage value = "./resources/images/canta1.jpg"/>
+                            </h:commandLink>
+                    </h:form>
+                    <div class="desc"><span class="indirim">599 TL</span><br/><strike>699 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/laptop1.jpg')}">
+                                <h:graphicImage value = "./resources/images/laptop1.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">8.999 TL</span><br/><strike>9.999 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/kulaklik1.jpg')}">
+                                <h:graphicImage value = "./resources/images/kulaklik1.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">400 TL</span><br/><strike>300 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                    <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/monitor1.jpg')}">
+                                <h:graphicImage value = "./resources/images/monitor1.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">999 TL</span><br/><strike>1.199 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/tv1.jpg')}">
+                                <h:graphicImage value = "./resources/images/tv1.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">3.999 TL</span><br/><strike>4.999 TL</strike></div>
+                    </div>
+                </div>
+                <div class="imageSlide">
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/canta2.jpg')}">
+                                <h:graphicImage value = "./resources/images/canta2.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">111 TL</span><br/><strike>200 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/kamer1.jpg')}">
+                                <h:graphicImage value = "./resources/images/kamer1.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">9.500 TL</span><br/><strike>9.999 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/telefon1.jpg')}">
+                                <h:graphicImage value = "./resources/images/telefon1.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">5000 TL</span><br/><strike>100000 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/ps41.jpg')}">
+                                <h:graphicImage value = "./resources/images/ps41.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">999 TL</span><br/><strike>1.199 TL</strike></div>
+                    </div>
+                    <div class="imageSelf">
+                        <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa('./resources/images/laptop5.jpg')}">
+                                <h:graphicImage value = "./resources/images/laptop5.jpg"/>
+                            </h:commandLink>
+                        </h:form>
+                    <div class="desc"><span class="indirim">8.900 TL</span><br/><strike>12.000 TL</strike></div>
+                    </div>
+                </div>
+                <a href="#" class="prev" onclick="plusSlides(-1)">&lt;</a>
+                <a href="#" class="next" onclick="plusSlides(1)">&gt;</a>
+            </div>
+            
+            
+            <h2>Sizin için Seçtiklerimiz</h2>
+            <div class="forYou">
+                    <div class="row">
+                        <div class="column">
+                            <div class="desc">Akıllı Robot Süpürger-Xiaomi</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/supurge1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/supurge1.jpg" width="200" height="300"/>
+                                </h:commandLink>
+                            </h:form>
+                            <div class="desc">3.499,99 TL</div>
+                        </div>
+                                
+                        <div class="column">
+                            <div class="desc">Zara Turuncu Elbise</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/zarat1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/zarat1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">140 TL</div>
+                        </div>
+                        
+                        <div class="column">
+                            <div class="desc">Zara Mavi Gömlek</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/zaram1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/zaram1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">149.95 TL</div>
+                        </div>
+                                
+                        <div class="column">
+                            <div class="desc">Erkek Gömlek</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/kiyafet3.jpg')}">
+                                    <h:graphicImage value = "./resources/images/kiyafet3.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">160.00 TL</div>
+                        </div>
+                    </div>
+                
+                    <div class="row">
+                        <div class="column">
+                            <div class="desc">Erkek Çocuk Tshirt</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/boy1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/boy1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">25,00 TL</div>
+                        </div>
+                                
+                        <div class="column">
+                            <div class="desc">HM Kadın Elbise</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/elbise1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/elbise1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">140 TL</div> 
+                        </div>
+                                
+                        <div class="column">
+                            <div class="desc">NIKE Erkek Spor Ayakkabısı</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/nike1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/nike1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">929.90 TL</div>
+                        </div>
+                                
+                        <div class="column">
+                            <div class="desc">OXXO Kadın Topuklu Ayakkabı</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/topuklu1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/topuklu1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">149.95 TL</div>
+                        </div>
+                    </div>
+                                     
+                    <div class="row">
+                        <div class="column">
+                            <div class="desc">Koşu bandı</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/kosubandi1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/kosubandi1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">72 TL</div>
+                        </div>
+                                    
+                        <div class="column">
+                            <div class="desc">RAYBAN Kadın Gözlük</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/gozluk1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/gozluk1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">400 TL</div>
+                        </div>
+                        
+                        <div class="column">
+                            <div class="desc">Bebek Arabası</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/bebek1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/bebek1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">999 TL</div>
+                        </div>
+                        <div class="column">
+                            <div class="desc">Altınyıldız Erkek Ceket</div>
+                            <h:form>
+                                <h:commandLink action="#{urunler.urunSayfa('./resources/images/ayildiz1.jpg')}">
+                                    <h:graphicImage value = "./resources/images/ayildiz1.jpg" width="200" height="300"/>
+                                    </h:commandLink>
+                            </h:form>
+                            <div class="desc">299.99 TL</div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+        </div>
+        
+        <footer>
+            &copy; 2020 Semt Pazarı
+            <script type="text/javascript" src="./resources/script2.js"></script>
+        </footer>
+
+    </div>
+    </h:body>
+</html>

@@ -1,0 +1,535 @@
+body {
+    background: #F4F4F4;
+    margin:0;
+    padding:0;
+    height: 100vh;
+}
+
+.container{
+    width: 1300px;
+    margin: 0 auto;
+    background: #FFF;
+}
+
+.header{
+    padding: 45px 0 50px 40px;
+}
+
+.searchbox{
+    float:left;
+    margin-left: 55px;
+}
+.searchbox input{
+    padding:10px;
+    border:2px solid #20B2AA;
+    border-radius:20px;
+}
+
+.searchImg{
+    float:left;
+    color:#20B2AA;
+}
+
+.searchbutton{
+    background-color: #20B2AA;
+    height: 40px;
+    width: 60px;
+    font-family: "Arial Narrow","Myriad Pro";
+    font-weight:bold;
+    border:1px solid #20B2AA;
+    border-radius: 20px;
+}
+
+.sepet{
+    float:right;
+    margin-right: 30px;
+    margin-top: 5px;
+}
+.sepetButon{
+    width: 100px;
+    height: 30px;
+    font-weight:bold;
+    border:1px solid #20B2AA;
+    border-radius: 20px;
+    background-color: #20B2AA;
+    font-size:15px;
+}
+
+.Uye-Giris{
+    margin-right: 14px;
+    margin-top: 10px;
+    float:right;
+}
+
+.Uye {
+    color: #444444;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.Uye:hover {
+    color: grey;
+}
+
+
+
+.menu {
+    background:linear-gradient(120deg,#2980b9, #8e44ad);
+    padding: 10px 0 10px 40px;
+}
+
+.menu a {
+    color: #c5d6db;
+    text-decoration: none;
+    font-size: 15px;
+    font-family: "Arial Narrow","Myriad Pro";
+    font-weight: bold;
+}
+
+.menu a:hover {
+    color: #ecf2f3;
+}
+
+aside {
+    float: left;
+    width: 120px;
+    padding: 30px 0 0 40px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+.main {
+    margin: 0 0 0 50px;
+    padding: 35px 40px 30px 0;
+    color: #444444;
+    font-family: "Georgia";
+    font-size: 13px;
+    line-height: 18px;
+    text-align: justify;
+}
+
+footer {
+    padding: 6px 40px 6px 40px;
+    background: #d6d6d6;
+    font-family: "Lucida Sans Unicode";
+    color: #444444;
+    font-size: 11px;
+    text-align: center;
+    margin-top: 55px;
+}
+
+.link-title {
+    text-decoration: none;
+    font-size: 24px;
+    color: #444444;
+    float:left;
+    margin-left: 20px;
+}
+
+commandButton{
+    color: buttonface;
+}
+
+
+/*------------Image Slide Başlangıç----------*/
+
+.imageContainer{
+    position: relative;
+    border:1px solid grey;
+    border-radius: 3px;
+}
+
+.imageSlide{
+    margin: 30px;
+    display:none;
+}
+
+.imageSelf{
+    float: left;
+    width: 17%;
+    padding: 10px 20px 10px 10px;
+}
+
+.imageSelf img{
+    width: 100%;
+    padding: 5px;
+    border:1px solid grey;
+    border-radius: 3px;
+}
+
+.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+.indirim{
+    font-weight:bold;
+    color: #008B8B;
+    font-size: 15px;
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 55%;
+  width: auto;
+  text-decoration: none;
+  padding: 16px;
+  margin-top: -50px;
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  -webkit-user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  color:white;
+}
+
+.imageSelf img:hover {
+    cursor:pointer;
+    -webkit-box-shadow: 0 0 10px #888888;
+    box-shadow: 0 0 10px #888888;
+
+}
+
+/*------------Image Slide Bitiş----------*/
+
+
+
+
+/*---------------SignUp Sayfası-----------------------*/
+
+#signUp #form{
+    width:500px;
+    border-radius: 10px;
+    padding: 10px;
+    background:#f0e9e9;
+    border: none;
+    margin:0 auto;
+}
+
+#signUp #form input {
+    width: 100%;
+    border-radius: 5px;
+    height: 20px;
+    background: white;
+    padding: 0 5px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+}
+
+.page-heading{
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#form{
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+#signUp #form #submit {
+    width: 100%;
+    height: 100%;
+    background: #2691d9;
+    font-size: 18px;
+    color: #e9f4fb;
+}
+
+/*---------------Kategori--------------------*/
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.3s;
+  padding-top: 60px;
+}
+
+.sidenav a{
+  padding: 8px 8px 20px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  cursor:pointer;
+  white-space: nowrap;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.kategori{
+    float: left;
+}
+
+.sidenav2 {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 1570px;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav2 a{
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.sidenav2 a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav2 .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+.urunKategori{
+    overflow: auto;
+}
+
+/*---------------Urun icin css-------------------*/
+
+.propertiesProduct table, th, td{
+    padding: 15px;
+    border: 2px solid;
+}
+
+.propertiesProduct table{
+    margin:0 auto;
+    width:700px;
+}
+
+.table-grey{
+    background-color: #D3D3D3;
+}
+
+.imageProduct{
+    float: top;
+    margin-top: 5px;
+}
+
+.propertiesProduct{
+    float: right;
+    margin-left:10px;
+    
+}
+.propertiesProduct h1,strike{
+    text-align: center;
+}
+
+.SepeteEkle{
+    background-color:#3b7687;
+    border-radius:3px;
+    border:1px solid #3b7687;
+    width:120px;
+    height: 50px;
+    font-family: "Georgia";
+    font-weight: bold;
+    font-size:17px;
+    margin-left: 275px;
+    margin-bottom: 10px;
+}
+
+/*---------------Sepetim Sayfası------------------------*/
+
+.main table{
+    border: 1px solid #3b7687;
+    border-radius: 3px;
+    float:left;
+}
+
+.main table img{
+    width:50%;
+}
+
+.main td {
+    border: 0;
+    width:200px;
+}
+
+.odeme{
+    float:right;
+    margin-right: 100px;
+    width: 300px;
+    height:300px;
+    background-color: #A9A9A9;
+    padding:10px;
+    border:1px solid #A9A9A9;
+    border-radius: 3px;
+}
+
+.odeme h2{
+    text-align: center;
+    font-weight: bold;
+    font-size:30px;
+}
+
+.sepetim{
+    overflow: auto;
+}
+
+/*-------------------------İletişim-------------------------------------*/
+
+#contact #form {
+    margin: 0 auto;
+    align-items: center;
+    width:500px;
+    padding: 10px;
+    height:auto;
+    border-radius: 10px;
+    background:#f0e9e9;
+    border: none;
+}
+
+#contact #form input {
+    width: 100%;
+    border-radius: 5px;
+    height: 10px;
+    background: white;
+    padding: 0 5px;
+    height: 30px;
+    font-size: 13px;
+    border: none;
+}
+
+#contact #form .message {
+    width: 100%;
+    height: 50px;
+    border-radius: 5px;
+    background: white;
+    border:none;
+    position:relative;
+    overflow:auto;
+}
+
+#contact #form #submit {
+    background: #3b7687;
+    height: 30px;
+    
+}
+
+/*------------------Kategoriler --------------------------*/
+.urunKategori tr{
+    display:inline;
+}
+.urunKategori td{
+    border:1px solid grey;
+    border-radius: 3px;
+}
+.urunKategori img{
+    width:200px;
+    height: 250px;
+}
+
+#sss h4{
+    
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#sss p{
+    background-color: #E6E6FA;
+    font-size: 15px;
+}
+
+.page-heading1{
+    padding:20px;
+}
+
+#odeme1 #form{
+    margin: 0 auto;
+    width:500px;
+    height: auto;
+    border-radius: 10px;
+    background:#f0e9e9;
+    border: none;
+}
+
+#odeme1 #form input {
+    width: 100%;
+    border-radius: 5px;
+    height: 20px;
+    background: white;
+    padding: 0 5px;
+    height: 30px;
+    font-size: 16px;
+    border: none;
+}
+#odeme1 #form .message{
+    width: 100%;
+    border-radius: 5px;
+    background: white;
+}
+
+/*anasayfa sizin icin sectik kismi */
+
+.forYou{
+   text-align: center;
+   margin: 5px;
+}
+
+.column {
+  float:left;
+  width: 20%;
+  padding: 5px;
+  border: 1px solid #E6E6FA;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  
+}

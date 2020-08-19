@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Semt Pazarı</title>
+        <link rel="stylesheet" href="./resources/style.css" type="text/css"/>
+        <script type="text/javascript" src="./resources/script.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    </h:head>
+    <h:body>
+        <div class="container">
+            
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('mySidenav')">&times;</a>
+                <a onclick="openNav('moda')">Moda</a>
+                <a onclick="openNav('elektronik')">Elektronik</a>
+                <a onclick="openNav('evMutfak')">Ev ve Mutfak</a>
+                <a onclick="openNav('konsol')">Video Oyun ve Konsol</a>
+                <a onclick="openNav('bebek')">Bebek ve Oyuncak</a>
+                <a onclick="openNav('spor')">Spor ve Outdoor</a>
+            </div>
+            <div id="moda" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('moda')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Çanta" action="#{kategori.kategoriSayfa('canta')}"/>
+                    <h:commandLink value="Ayakkabı" action="#{kategori.kategoriSayfa('ayakkabi')}"/>
+                    <h:commandLink value="Kıyafet" action="#{kategori.kategoriSayfa('kiyafet')}"/>
+                </h:form>>
+            </div>
+            <div id="elektronik" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('elektronik')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Bilgisayar" action="#{kategori.kategoriSayfa('bilgisayar')}"/>
+                    <h:commandLink value="Telefon" action="#{kategori.kategoriSayfa('telefon')}"/>
+                    <h:commandLink value="Ev Eşyaları" action="#{kategori.kategoriSayfa('evEsyasi')}"/>
+                    <h:commandLink value="Kamera" action="#{kategori.kategoriSayfa('kamera')}"/>
+                    <h:commandLink value="Kulaklık" action="#{kategori.kategoriSayfa('kulaklik')}"/>
+                </h:form>>
+            </div>
+            <div id="evMutfak" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('evMutfak')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Ev Dekorasyonu" action="#{kategori.kategoriSayfa('evDekorasyon')}"/>
+                    <h:commandLink value="Aydınlatma" action="#{kategori.kategoriSayfa('aydinlatma')}"/>
+                    <h:commandLink value="Mutfak Gereçleri" action="#{kategori.kategoriSayfa('mutfakGerecleri')}"/>
+                </h:form>>
+            </div>
+            <div id="konsol" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('konsol')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Playstation 4" action="#{kategori.kategoriSayfa('ps4')}"/>
+                    <h:commandLink value="Xbox One" action="#{kategori.kategoriSayfa('xbox')}"/>
+                    <h:commandLink value="Nintendo Switch" action="#{kategori.kategoriSayfa('nintendo')}"/>
+                </h:form>>
+            </div>
+            <div id="spor" class="sidenav2">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav('spor')">&#8592;</a>
+                <h:form>
+                    <h:commandLink value="Fitness ve Egzersiz" action="#{kategori.kategoriSayfa('fitness')}"/>
+                    <h:commandLink value="Kamp ve Doğa Yürüyüşü" action="#{kategori.kategoriSayfa('kamp')}"/>
+                </h:form>
+            </div>
+            
+        <header class="header">
+            
+            <span class="kategori" style="font-size:30px;cursor:pointer" onclick="openNav('mySidenav')">&#9776;</span>
+            
+            <h:link class="link-title" value="Semt Pazarı" outcome="index.xhtml" />
+            <h:form class="searchbox">
+                <h:inputText value="#{arama.hedef}"  p:placeholder="Ara..." size="70"/>
+                
+                <h:commandButton class="searchImg" styleClass="searchbutton" value="ARA" action="#{arama.search()}"/>
+            </h:form>
+            
+            <h:form class="sepet">
+                <h:commandButton class="sepetButon" value="Sepetim : #{user.getSepetim()}" action="#{sepet.sepetGit(user.email)}"/>
+            </h:form>
+            
+            <div class="Uye-Giris">
+            <h:link class ="Uye" value="Üye Ol" outcome="signUp.xhtml" />
+            <h:link class ="Uye" value="Giriş Yap" outcome="login.xhtml" />
+            <h:link class ="Uye" value="İletişim" outcome="iletisim.xhtml" />
+            <h:link class ="Uye" value="SSS" outcome="sorular.xhtml"/>
+            </div>
+        </header>
+            
+        <nav class="menu">
+        </nav>
+        <div class="urunKategori">
+            <h:dataTable value="#{kategori.products}" var="u">
+                <h:column>
+                    <div>
+                    <h:form>
+                            <h:commandLink action="#{urunler.urunSayfa(u.value)}">
+                                <h:graphicImage value = "#{u.value}"/>
+                            </h:commandLink>
+                    </h:form>
+                        <div class="desc"><h:outputText style="font-weight:bold;font-size:20px;color:#4169E1;" value="#{u.key}"/></div>
+                    </div>
+                    
+                </h:column>
+            </h:dataTable>
+            
+        </div>
+        
+        <footer>
+            &copy; 2020 Semt Pazarı
+            <script type="text/javascript" src="./resources/script2.js"></script>
+        </footer>
+
+    </div>
+    </h:body>
+</html>
