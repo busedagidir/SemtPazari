@@ -4,6 +4,6 @@
 
 @ BurakYiğitYücel
 
-@HikmetOğuzkanKaptan
+@ HikmetOğuzkanKaptan
 
 @ BuseDağıdır
